@@ -2,21 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
     public function index(){
         if(!Session::get('login')){
-            return redirect('login')->with('alert','Kamu harus login dulu');
+            return redirect('admin/auth/login')->with('alert','Kamu harus login dulu');
         }
         else{
-            return view('user');
+            return view('admin/layout/index');
         }
     }
 
     public function login(){
-        return view('login');
+        return view('admin/auth/login');
     }
 
     public function loginPost(Request $request){
@@ -30,24 +33,24 @@ class AuthController extends Controller
                 Session::put('name',$data->name);
                 Session::put('email',$data->email);
                 Session::put('login',TRUE);
-                return redirect('home_user');
+                return redirect('admin/layout/index');
             }
             else{
-                return redirect('login')->with('alert','Password atau Email, Salah !');
+                return redirect('admin/auth/login')->with('alert','Password atau Email, Salah !');
             }
         }
         else{
-            return redirect('login')->with('alert','Password atau Email, Salah!');
+            return redirect('admin/auth/login')->with('alert','Password atau Email, Salah!');
         }
     }
 
     public function logout(){
         Session::flush();
-        return redirect('login')->with('alert','Kamu sudah logout');
+        return redirect('admin/auth/login')->with('alert','Kamu sudah logout');
     }
 
     public function register(Request $request){
-        return view('register');
+        return view('admin/auth/register');
     }
 
     public function registerPost(Request $request){
@@ -63,6 +66,6 @@ class AuthController extends Controller
         $data->email = $request->email;
         $data->password = bcrypt($request->password);
         $data->save();
-        return redirect('login')->with('alert-success','Kamu berhasil Register');
+        return redirect('admin/auth/login')->with('alert-success','Kamu berhasil Register');
     }
 }

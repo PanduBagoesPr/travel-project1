@@ -39,7 +39,7 @@
 	<!-- end #page-loader -->
 	
 	<div class="login-cover">
-	    <div class="login-cover-image" style="background-image: url({{ asset('assets/img/login-bg/login-bg-17.jpg') }}) " data-id="login-cover-image"></div>
+	    <div class="login-cover-image" style="background-image: url({{ asset('assets/img/login-bg/login-bg-17.jpg') }})" data-id="login-cover-image"></div>
 	    <div class="login-cover-bg"></div>
 	</div>
 	<!-- begin #page-container -->
@@ -59,25 +59,32 @@
             <!-- end brand -->
             <!-- begin login-content -->
             <div class="login-content">
-                <form action="/loginPost" method="POST" class="margin-bottom-0">
+                <form action="/registerPost" method="POST" class="margin-bottom-0">
                     {{ csrf_field() }}
                     <div class="form-group m-b-20">
+                        <label class="control-label">Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control form-control-lg" placeholder="First Name" required />
+                    </div>
+                    <div class="form-group m-b-20">
+                        <input type="text" class="form-control form-control-lg" placeholder="Last Name" required />
+                    </div>
+                    <div class="form-group m-b-20">
                         <input type="text" class="form-control form-control-lg" placeholder="Email Address" required />
+                    </div>
+                    <div class="form-group m-b-20">
+                        <input type="text" class="form-control form-control-lg" placeholder="Re-Enter Email Address" required />
                     </div>
                     <div class="form-group m-b-20">
                         <input type="password" class="form-control form-control-lg" placeholder="Password" required />
                     </div>
                     <div class="checkbox checkbox-css m-b-20">
-                        <input type="checkbox" id="remember_checkbox" /> 
-                        <label for="remember_checkbox">
-                        	Remember Me
-                        </label>
+                        <input type="checkbox" id="agreement_checkbox" value="">
+							<label for="agreement_checkbox">
+								By clicking Sign Up, you agree to our <a href="javascript:;">Terms</a> and that you have read our <a href="javascript:;">Data Policy</a>, including our <a href="javascript:;">Cookie Use</a>.
+							</label>
                     </div>
                     <div class="login-buttons">
-                        <button type="submit" class="btn btn-success btn-block btn-lg">Sign me in</button>
-                    </div>
-                    <div class="m-t-20">
-                        Not a member yet? Click <a href="/auth/register">here</a> to register.
+                        <button type="submit" class="btn btn-success btn-block btn-lg">Sign Up</button>
                     </div>
                 </form>
             </div>
