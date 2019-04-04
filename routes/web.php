@@ -20,3 +20,7 @@ Route::post('loginPost', 'AuthController@loginPost');
 Route::get('auth/register', 'AuthController@register');
 Route::post('registerPost', 'AuthController@registerPost');
 Route::get('logout', 'AuthController@logout');
+
+Route::get('layout/admin', function(){
+    return view('admin/layout/admin');
+});

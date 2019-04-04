@@ -14,7 +14,7 @@ class AuthController extends Controller
             return redirect('admin/auth/login')->with('alert','Kamu harus login dulu');
         }
         else{
-            return view('admin/layout/index');
+            return view('admin/layout/admin');
         }
     }
 
