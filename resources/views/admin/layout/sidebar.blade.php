@@ -44,7 +44,7 @@
 						<a href="javascript:;">
 							<span class="badge pull-right">10</span>
 							<i class="material-icons">inbox</i>
-							<span>Email</span>
+							<span>Data</span>
 						</a>
 						<ul class="sub-menu">
 						    <li><a href="email_inbox.html">Inbox</a></li>

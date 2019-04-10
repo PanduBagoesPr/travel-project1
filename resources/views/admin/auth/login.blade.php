@@ -57,15 +57,25 @@
                 </div>
             </div>
             <!-- end brand -->
+            @if(\Session::has('alert'))
+                <div class="alert alert-danger">
+                    <div>{{Session::get('alert')}}</div>
+                </div>
+            @endif
+            @if(\Session::has('alert-success'))
+                <div class="alert alert-success">
+                    <div>{{Session::get('alert-success')}}</div>
+                </div>
+            @endif
             <!-- begin login-content -->
             <div class="login-content">
                 <form action="/loginPost" method="POST" class="margin-bottom-0">
                     {{ csrf_field() }}
                     <div class="form-group m-b-20">
-                        <input type="text" class="form-control form-control-lg" placeholder="Email Address" required />
+                        <input name="username" type="text" class="form-control form-control-lg" placeholder="Username" required />
                     </div>
                     <div class="form-group m-b-20">
-                        <input type="password" class="form-control form-control-lg" placeholder="Password" required />
+                        <input name="password" type="password" class="form-control form-control-lg" placeholder="Password" required />
                     </div>
                     <div class="checkbox checkbox-css m-b-20">
                         <input type="checkbox" id="remember_checkbox" /> 
