@@ -12,8 +12,7 @@
 							</div>
 							<div class="info">
 								<b class="caret pull-right"></b>
-								John Smith
-								<small>Front end developer</small>
+								{{Session::get('username')}}
 							</div>
 						</a>
 					</li>
@@ -36,20 +35,17 @@
 						    <span>Dashboard</span>
 					    </a>
 						<ul class="sub-menu">
-						    <li><a href="index.html">Dashboard v1</a></li>
-						    <li class="active"><a href="index_v2.html">Dashboard v2</a></li>
+						    <li><a href="/layout/admin">Dashboard</a></li>
 						</ul>
 					</li>
 					<li class="has-sub">
 						<a href="javascript:;">
-							<span class="badge pull-right">10</span>
-							<i class="material-icons">inbox</i>
+							<i class="material-icons">book</i>
 							<span>Data</span>
 						</a>
 						<ul class="sub-menu">
-						    <li><a href="email_inbox.html">Inbox</a></li>
-						    <li><a href="email_compose.html">Compose</a></li>
-						    <li><a href="email_detail.html">Detail</a></li>
+						    <li><a href="{{ url ('/customer/form') }}">Customer</a></li>
+						    <li><a href="email_compose.html">Package</a></li>
 						</ul>
 					</li>
 			        <!-- begin sidebar minify button -->

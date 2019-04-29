@@ -70,7 +70,7 @@
     <script src="{{ asset('assets/plugins/jquery-jvectormap/jquery-jvectormap.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/jquery-jvectormap/jquery-jvectormap-world-merc-en.js') }}"></script>
     <script src="{{ asset('assets/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js') }}"></script>
-	<script src="{{ asset('assets/plugins/gritter/js/jquery.gritter.js') }}"></script>
+	<!-- <script src="{{ asset('assets/plugins/gritter/js/jquery.gritter.js') }}"></script> -->
 	<script src="{{ asset('assets/js/demo/dashboard-v2.min.js') }}"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
 	

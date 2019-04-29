@@ -17,10 +17,24 @@ Route::get('/', function () {
 
 Route::get('auth/login', 'AuthController@login');
 Route::post('loginPost', 'AuthController@loginPost');
-Route::get('auth/register', 'AuthController@register');
-Route::post('registerPost', 'AuthController@registerPost');
 Route::get('logout', 'AuthController@logout');
 Route::get('layout/admin', 'AdminController@index');
+
+
+Route::get('customer/form','FormCustomerController@form');
+Route::get('customer/add','FormCustomerController@create');
+Route::post('customer/store','FormCustomerController@store');
+Route::get('customer/edit/{id}','FormCustomerController@edit');
+Route::put('customer/update/{id}','FormCustomerController@update');
+Route::get('customer/destroy/{id}','FormCustomerController@destroy');
+
+
+// Route::get('front/auth/login', 'AuthCustomerController@login');
+// Route::post('front/loginPost', 'AuthCustomerController@loginPost');
+// Route::get('auth/register', 'AuthCustomerController@register');
+// Route::post('/registerPost', 'AuthCustomerController@registerPost');
+// Route::get('front/logout', 'AuthCustomerController@logout');
+
 
 Route::get('layout/admin', function(){
     return view('admin/layout/admin');
