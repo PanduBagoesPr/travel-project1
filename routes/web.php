@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('auth/login', 'AuthController@login');
 Route::post('loginPost', 'AuthController@loginPost');
 Route::get('logout', 'AuthController@logout');
-Route::get('layout/admin', 'AdminController@index');
+Route::get('layout/admin', 'AuthController@index');
 
 
 Route::get('customer/form','FormCustomerController@form');
@@ -36,6 +36,6 @@ Route::get('customer/destroy/{id}','FormCustomerController@destroy');
 // Route::get('front/logout', 'AuthCustomerController@logout');
 
 
-Route::get('layout/admin', function(){
-    return view('admin/layout/admin');
-});
+// Route::get('layout/admin', function(){
+//     return view('admin/layout/admin');
+// });
