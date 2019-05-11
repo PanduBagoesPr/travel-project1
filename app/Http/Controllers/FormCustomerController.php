@@ -44,16 +44,15 @@ class FormCustomerController extends Controller
             'name'=>'required'
         ]);
 
-        $customer = new FormCustomer([
-            'name' => $request->get('name'),
-            'datebirth' => $request->get('datebirth'),
-            'address' => $request->get('address'),
-            'telp' => $request->get('telp'),
-            'city' => $request->get('city'),
-            'province' => $request->get('province')
-        ]);
+        $customer = new FormCustomer;
+        $customer ->name = $request->get('name');
+        $customer ->datebirth = $request->get('datebirth');
+        $customer ->address = $request->get('address');
+        $customer ->telp = $request->get('telp');
+        $customer ->city = $request->get('city');
+        $customer ->province = $request->get('province');
         $customer->save();
-        return redirect('/admin/customers/form')->with('Success', 'Data Telah Tersimpan!');
+        return redirect('admin/customers/form')->with('Success', 'Data Telah Tersimpan!');
     }
 
     /**
@@ -117,6 +116,6 @@ class FormCustomerController extends Controller
         $customer = FormCustomer::find($id);
         $customer->delete();
 
-        return redirect('admin/customers/form')->with('Success', 'Data Telah Di Hapus!');
+        return redirect('customer/form')->with('Success', 'Data Telah Di Hapus!');
     }
 }

@@ -25,7 +25,7 @@ Route::get('customer/form','FormCustomerController@form');
 Route::get('customer/add','FormCustomerController@create');
 Route::post('customer/store','FormCustomerController@store');
 Route::get('customer/edit/{id}','FormCustomerController@edit');
-Route::put('customer/update/{id}','FormCustomerController@update');
+Route::put('customer/update/{{$customer->id}}','FormCustomerController@update');
 Route::get('customer/destroy/{id}','FormCustomerController@destroy');
 
 
