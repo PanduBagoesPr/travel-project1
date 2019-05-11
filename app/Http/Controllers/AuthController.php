@@ -21,7 +21,7 @@ class AuthController extends Controller
 
     public function login(){
         if(Session::get('username')){
-            return view('layout/admin');
+            return redirect('layout/admin');
         }
         else{
             return view('admin/auth/login');

@@ -8,6 +8,7 @@
                 <legend class="m-b-15">Edit Data</legend>
                 <div class="form-group">
                     @csrf
+                    @method('PUT')
                     <label for="name">Name</label>
                     <input name="name" type="text" class="form-control"  value= "{{ $customer->name }}"  />
                 </div>
