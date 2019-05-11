@@ -102,7 +102,7 @@ class FormCustomerController extends Controller
         $customer->province = $request->get('province');
         $customer->save();
 
-        return redirect('admin/customers/form')->with('Success', 'Data Telah Di Update!');
+        return redirect('customer/form')->with('Success', 'Data Telah Di Update!');
     }
 
     /**
