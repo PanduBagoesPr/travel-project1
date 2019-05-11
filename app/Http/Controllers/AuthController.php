@@ -11,21 +11,27 @@ use Illuminate\Support\Facades\Session;
 class AuthController extends Controller
 {
     public function index(){
-        if(!Session::get('login')){
+        if(!Session::get('username')){
             return redirect('auth/login')->with('alert','Kamu harus login dulu');
         }
         else{
-            return view('layout/admin');
+            return view('admin/layout/admin');
         }
     }
 
     public function login(){
-        return view('admin/auth/login');
+        if(Session::get('username')){
+            return view('layout/admin');
+        }
+        else{
+            return view('admin/auth/login');
+        }
     }
 
     public function loginPost(Request $request){
         $username = $request->username;
         $data = User::where('username',$username)->first();
+        
         if(Auth::attempt($request->only('username', 'password')))
         {
             Session::put('username',$data->username);

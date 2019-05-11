@@ -42,7 +42,7 @@ class FormCustomerController extends Controller
     {
         $request->validate([
             'name'=>'required'
-        ]);
+            ]);
 
         $customer = new FormCustomer;
         $customer ->name = $request->get('name');
@@ -52,7 +52,7 @@ class FormCustomerController extends Controller
         $customer ->city = $request->get('city');
         $customer ->province = $request->get('province');
         $customer->save();
-        return redirect('admin/customers/form')->with('Success', 'Data Telah Tersimpan!');
+        return redirect('customer/form')->with('Success', 'Data Telah Tersimpan!');
     }
 
     /**
@@ -102,7 +102,7 @@ class FormCustomerController extends Controller
         $customer->province = $request->get('province');
         $customer->save();
 
-        return redirect('admin/customers/form')->with('Success', 'Data Telah Di Update!');
+        return redirect('customer/form')->with('Success', 'Data Telah Di Update!');
     }
 
     /**

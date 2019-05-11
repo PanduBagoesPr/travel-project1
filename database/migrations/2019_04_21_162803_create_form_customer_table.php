@@ -13,7 +13,7 @@ class CreateFormCustomerTable extends Migration
      */
     public function up()
     {
-        Schema::create('form_customer', function (Blueprint $table) {
+        Schema::create('form_customers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 60);
             $table->string('datebirth');
