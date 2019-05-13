@@ -28,7 +28,7 @@ class AuthCustomerController extends Controller
         $data->email = $request->email;
         $data->password = bcrypt($request->password);
         $data->save();
-        return redirect('front/auth/logincustomer')->with('alert-success','Kamu berhasil Register');
+        return redirect('auth/logincustomer')->with('alert-success','Kamu berhasil Register');
     }
 
     // public function index(){
@@ -46,13 +46,13 @@ class AuthCustomerController extends Controller
 
     public function logincustomerPost(Request $request){
         $username = $request->username;
-        $data = User::where('username',$username)->first();
+        $data = Customer::where('username',$username)->first();
         if(Auth::attempt($request->only('username', 'password')))
         {
             Session::put('username',$data->username);
-            return redirect('layout/admin');
+            return redirect('auth/logincustomer');
         }
-        return redirect('auth/login');
+        return redirect('/');
     }
 
     public function logoutcustomer(){

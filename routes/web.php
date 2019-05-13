@@ -12,24 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front/layout/index');
 });
 
 
-// =================== L O G I N   A N D  R E G I S T E R  C O N T R O L L E R ===================
+// =================== L O G I N  A N D  R E G I S T E R  C O N T R O L L E R ===================
 Route::get('auth/login', 'AuthController@login');
 Route::post('loginPost', 'AuthController@loginPost');
 Route::get('logout', 'AuthController@logout');
 Route::get('layout/admin', 'AuthController@index');
 
-Route::get('front/auth/logincustomer', 'AuthCustomerController@logincustomer');
+Route::get('auth/logincustomer', 'AuthCustomerController@logincustomer');
 Route::post('logincustomerPost', 'AuthCustomerController@logincustomerPost');
-Route::get('front/auth/registercustomer', 'AuthCustomerController@registercustomer');
-Route::post('registercustomersPost', 'AuthCustomerController@registercustomerPost');
-Route::get('front/logoutcustomer', 'AuthCustomerController@logoutcustomer');
+Route::get('auth/registercustomer', 'AuthCustomerController@registercustomer');
+Route::post('registercustomerPost', 'AuthCustomerController@registercustomerPost');
+Route::get('logoutcustomer', 'AuthCustomerController@logoutcustomer');
+Route::get('layout/index', 'AuthCustomerController@index');
 
 
-// =================== A D M I N   C O N T R O L L E R ===================
+// =================== A D M I N  C O N T R O L L E R ===================
 Route::get('customer/form','FormCustomerController@form');
 Route::get('customer/add','FormCustomerController@create');
 Route::post('customer/store','FormCustomerController@store');
@@ -54,3 +55,6 @@ Route::get('booking/destroybooking/{id}','FormBookingController@destroybooking')
 // Route::get('layout/admin', function(){
 //     return view('admin/layout/admin');
 // });
+
+// =================== F R O N T  C O N T R O L L E R ===================
+
