@@ -16,13 +16,6 @@
 							</div>
 						</a>
 					</li>
-					<li>
-						<ul class="nav nav-profile">
-                            <li><a href="javascript:;"><i class="fa fa-cog"></i> Settings</a></li>
-                            <li><a href="javascript:;"><i class="fa fa-pencil-alt"></i> Send Feedback</a></li>
-                            <li><a href="javascript:;"><i class="fa fa-question-circle"></i> Helps</a></li>
-                        </ul>
-					</li>
 				</ul>
 				<!-- end sidebar user -->
 				<!-- begin sidebar nav -->
@@ -44,8 +37,9 @@
 							<span>Data</span>
 						</a>
 						<ul class="sub-menu">
-						    <li><a href="{{ url ('/customer/form') }}">Customer</a></li>
-						    <li><a href="email_compose.html">Package</a></li>
+						    <li><a href="{{ url ('/customer/form') }}">Customers</a></li>
+						    <li><a href="{{ url ('/packages/formpackages') }}">Packages</a></li>
+							<li><a href="{{ url ('/booking/formbooking') }}">Bookings</li>
 						</ul>
 					</li>
 			        <!-- begin sidebar minify button -->

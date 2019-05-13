@@ -25,8 +25,8 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.html" class="navbar-brand">
-					Color Admin Material
+				<a href="{{ url ('/layout/admin') }}" class="navbar-brand">
+					Admin Travel
 				</a>
 			</div>
 			<!-- end navbar-header -->
@@ -44,11 +44,6 @@
 						<img src="../assets/img/user/user-14.jpg" alt="" /> 
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
-						<a href="javascript:;" class="dropdown-item">Edit Profile</a>
-						<a href="javascript:;" class="dropdown-item"><span class="badge badge-danger pull-right">2</span> Inbox</a>
-						<a href="javascript:;" class="dropdown-item">Calendar</a>
-						<a href="javascript:;" class="dropdown-item">Setting</a>
-						<div class="dropdown-divider"></div>
 						<a href="/logout" class="dropdown-item">Log Out</a>
 					</div>
 				</li>

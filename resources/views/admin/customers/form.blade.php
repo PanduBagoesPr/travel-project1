@@ -45,8 +45,8 @@
                         <td>{{$datas->city }}</td>
                         <td>{{$datas->province }}</td>
                         <td class="with-btn-group" nowrap>
-                          <a href="/customer/edit/{{$datas->id}}" class="btn btn-sm btn-primary m-r-2">Edit</a>
-                          <a href="/customer/destroy/{{$datas->id}}" class="btn btn-sm btn-white m-r-2">Delete</a>
+                          <a href="{{ url ('/customer/edit') }}/{{$datas->id}}" class="btn btn-sm btn-primary m-r-2">Edit</a>
+                          <a href="{{ url ('/customer/destroy') }}/{{$datas->id}}" class="btn btn-sm btn-white m-r-2">Delete</a>
                         </td>
                       </tr>
                   @endforeach

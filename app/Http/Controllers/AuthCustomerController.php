@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\Customer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class AuthCustomerController extends Controller
 {
-    public function register(Request $request){
-        return view('front/auth/register');
+    public function registercustomer(Request $request){
+        return view('front/auth/registercustomer');
     }
 
-    public function registerPost(Request $request){
+    public function registercustomerPost(Request $request){
         $this->validate($request, [
             'name' => 'required|min:4',
             'username' => 'required|min:4',
@@ -28,23 +28,23 @@ class AuthCustomerController extends Controller
         $data->email = $request->email;
         $data->password = bcrypt($request->password);
         $data->save();
-        return redirect('front/auth/login')->with('alert-success','Kamu berhasil Register');
+        return redirect('front/auth/logincustomer')->with('alert-success','Kamu berhasil Register');
     }
 
-    public function index(){
-        if(!Session::get('login')){
-            return redirect('auth/login')->with('alert','Kamu harus login dulu');
-        }
-        else{
-            return view('layout/admin');
-        }
+    // public function index(){
+    //     if(!Session::get('login')){
+    //         return redirect('auth/login')->with('alert','Kamu harus login dulu');
+    //     }
+    //     else{
+    //         return view('layout/admin');
+    //     }
+    // }
+
+    public function logincustomer(){
+        return view('front/auth/logincustomer');
     }
 
-    public function login(){
-        return view('front/auth/login');
-    }
-
-    public function loginPost(Request $request){
+    public function logincustomerPost(Request $request){
         $username = $request->username;
         $data = User::where('username',$username)->first();
         if(Auth::attempt($request->only('username', 'password')))
@@ -55,7 +55,7 @@ class AuthCustomerController extends Controller
         return redirect('auth/login');
     }
 
-    public function logout(){
+    public function logoutcustomer(){
         Session::flush();
         return redirect('auth/login')->with('alert','Kamu sudah logout');
     }

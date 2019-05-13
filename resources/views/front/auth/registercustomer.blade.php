@@ -59,7 +59,7 @@
             <!-- end brand -->
             <!-- begin login-content -->
             <div class="login-content">
-                <form action="/registerPost" method="POST" class="margin-bottom-0">
+                <form action="{{ url ('/registercustomerPost') }}" method="POST" class="margin-bottom-0">
                     {{ csrf_field() }}
                     <div class="form-group m-b-20">
                         <label class="control-label">Name <span class="text-danger">*</span></label>
@@ -92,36 +92,35 @@
         </div>
         <!-- end login -->
         
-        <ul class="login-bg-list clearfix">
+        <!-- <ul class="login-bg-list clearfix">
             <li class="active"><a href="javascript:;" data-click="change-bg" data-img="../assets/img/login-bg/login-bg-17.jpg" style="background-image: url(../assets/img/login-bg/login-bg-17.jpg)"></a></li>
             <li><a href="javascript:;" data-click="change-bg" data-img="../assets/img/login-bg/login-bg-16.jpg" style="background-image: url(../assets/img/login-bg/login-bg-16.jpg)"></a></li>
             <li><a href="javascript:;" data-click="change-bg" data-img="../assets/img/login-bg/login-bg-15.jpg" style="background-image: url(../assets/img/login-bg/login-bg-15.jpg)"></a></li>
             <li><a href="javascript:;" data-click="change-bg" data-img="../assets/img/login-bg/login-bg-14.jpg" style="background-image: url(../assets/img/login-bg/login-bg-14.jpg)"></a></li>
             <li><a href="javascript:;" data-click="change-bg" data-img="../assets/img/login-bg/login-bg-13.jpg" style="background-image: url(../assets/img/login-bg/login-bg-13.jpg)"></a></li>
             <li><a href="javascript:;" data-click="change-bg" data-img="../assets/img/login-bg/login-bg-12.jpg" style="background-image: url(../assets/img/login-bg/login-bg-12.jpg)"></a></li>
-        </ul>
+        </ul> -->
 	</div>
 	<!-- end page container -->
 	
 	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="../assets/plugins/jquery/jquery-3.2.1.min.js"></script>
-	<script src="../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-	<script src="../assets/plugins/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+	<script src="{{ asset('assets/plugins/jquery/jquery-3.2.1.min.js') }}"></script>
+	<script src="{{ asset('assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+	<script src="{{ asset('assets/plugins/bootstrap/4.0.0/js/bootstrap.bundle.min.js') }}"></script>
 	<!--[if lt IE 9]>
 		<script src="../assets/crossbrowserjs/html5shiv.js"></script>
 		<script src="../assets/crossbrowserjs/respond.min.js"></script>
 		<script src="../assets/crossbrowserjs/excanvas.min.js"></script>
 	<![endif]-->
-	<script src="../assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="../assets/plugins/js-cookie/js.cookie.js"></script>
-	<script src="../assets/js/theme/material.min.js"></script>
-	<script src="../assets/js/apps.min.js"></script>
+	<script src="{{ asset('assets/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+	<script src="{{ asset('assets/plugins/js-cookie/js.cookie.js') }}"></script>
+	<script src="{{ asset('assets/js/theme/material.min.js') }}"></script>
+	<script src="{{ asset('assets/js/apps.min.js') }}"></script>
 	<!-- ================== END BASE JS ================== -->
 	
 	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
-	<script src="../assets/js/demo/login-v2.demo.min.js"></script>
+	<script src="{{ asset('assets/js/demo/login-v2.demo.min.js') }}"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
-
 	<script>
 		$(document).ready(function() {
 			App.init();
