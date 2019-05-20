@@ -87,7 +87,7 @@
                         <button type="submit" class="btn btn-success btn-block btn-lg">Sign me in</button>
                     </div>
                     <div class="m-t-20">
-                        Not a member yet? Click <a href="{{ url ('front/auth/registercustomer') }}">here</a> to register.
+                        Not a member yet? Click <a href="{{ url ('auth/registercustomer') }}">here</a> to register.
                     </div>
                 </form>
             </div>
